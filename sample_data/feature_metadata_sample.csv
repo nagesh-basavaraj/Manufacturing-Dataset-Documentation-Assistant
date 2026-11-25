@@ -1,0 +1,4 @@
+feature_name,description,unit,unit_applicable
+spindle_speed,Rotational speed recorded by the machine,rpm,yes
+feed_rate,Feed rate setting recorded for the process,mm/rev,yes
+machine_state,Machine operating state,,no

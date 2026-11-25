@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ManuDoc AI | Manufacturing Dataset Documentation</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">M</div><div><b>ManuDoc AI</b><small>PS 192 · Industry 4.0</small></div></div>
+    <div class="nav-label">WORKSPACE</div>
+    <a class="nav active" href="#overview"><span class="nav-icon">▦</span> <span>Overview</span></a>
+    <a class="nav" href="#upload"><span class="nav-icon">⇧</span> <span>Dataset upload</span></a>
+    <a class="nav" href="#results"><span class="nav-icon">▤</span> <span>Documentation</span></a>
+    <div class="sidebar-section">
+      <div class="nav-label">DOCUMENTATION FLOW</div>
+      <div class="flow-step active"><span>1</span><div><b>Provide data</b><small>CSV or Excel</small></div></div>
+      <div class="flow-step"><span>2</span><div><b>Review profile</b><small>Statistics and gaps</small></div></div>
+      <div class="flow-step"><span>3</span><div><b>Export report</b><small>Excel or PDF</small></div></div>
+    </div>
+    <div class="sidebar-note"><span class="pulse"></span> Local prototype <small>Your files are processed by this local server.</small></div>
+    <div class="sidebar-foot">Manufacturing data<br>made understandable.</div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">INDUSTRY 4.0 / DATA QUALITY</span><h1>Dataset documentation</h1></div><div class="topbar-actions"><span class="mode-badge">Local workspace</span><div class="top-right"><span class="status-dot"></span> System ready</div></div></header>
+    <section id="overview" class="hero">
+      <div><span class="eyebrow light">MANUFACTURING DATA ASSISTANT</span><h2>Turn process data into<br><em>clear documentation.</em></h2><p>Profile your dataset, organize feature information, and identify metadata gaps — without guessing what unnamed sensors mean.</p><div class="hero-badges"><span>Evidence-based</span><span>Local processing</span><span>Excel &amp; PDF</span></div><a class="primary-btn" href="#upload">Start documenting <b>→</b></a></div>
+      <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="data-card"><div class="mini-head"><span>DATA PROFILE</span><span class="live">● LIVE</span></div><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="mini-foot"><span>FEATURES</span><b>Structured insights</b></div></div><div class="float-tag">✓ Metadata checks</div><div class="float-tag second">⌁ Dataset profile</div></div>
+    </section>
+    <section id="upload" class="section">
+      <div class="section-heading"><div><span class="eyebrow">01 / INPUT</span><h2>Upload your dataset</h2><p>Start with a process dataset. Add feature descriptions if you have them.</p></div><span class="step-pill">STEP 1 OF 2</span></div>
+      <div class="upload-grid">
+        <label class="dropzone" for="dataset"><input id="dataset" type="file" accept=".csv,.xlsx,.xlsm"><div class="upload-icon">↑</div><b>Drop your dataset here</b><span>or <u>browse files</u></span><small>CSV or XLSX · Max 25 MB</small><strong id="dataset-name">No dataset selected</strong></label>
+        <label class="dropzone metadata-zone" for="metadata"><input id="metadata" type="file" accept=".csv,.xlsx,.xlsm"><div class="upload-icon secondary">＋</div><b>Add feature descriptions <small class="optional">OPTIONAL</small></b><span>Upload an existing metadata sheet</span><small>CSV or XLSX · feature_name, description, unit</small><strong id="metadata-name">No metadata selected</strong></label>
+      </div>
+      <div class="upload-actions"><div class="privacy-note">⌑ <span>Files are processed locally by this application. No database is used.</span></div><button id="analyze" class="primary-btn" disabled>Analyze dataset <b>→</b></button></div>
+      <div id="error" class="error hidden"></div><div id="loading" class="loading hidden"><span class="spinner"></span> Profiling dataset and checking metadata…</div>
+    </section>
+    <section id="results" class="section results hidden">
+      <div class="section-heading"><div><span class="eyebrow">02 / RESULTS</span><h2>Your documentation workspace</h2><p id="ai-status">Analysis completed.</p></div><span class="step-pill complete">ANALYSIS COMPLETE</span></div>
+      <div class="metric-grid">
+        <div class="metric"><span>DATASET ROWS</span><b id="m-rows">—</b><small>Records processed</small></div>
+        <div class="metric"><span>FEATURES</span><b id="m-cols">—</b><small>Columns documented</small></div>
+        <div class="metric"><span>MISSING CELLS</span><b id="m-nulls">—</b><small>Empty data values</small></div>
+        <div class="metric warning-metric"><span>METADATA GAPS</span><b id="m-gaps">—</b><small>Items needing attention</small></div>
+      </div>
+      <section class="report-summary" aria-labelledby="report-summary-title">
+        <div class="summary-topline"><span class="summary-icon">✦</span><div><span class="eyebrow">REPORT OVERVIEW</span><h3 id="report-summary-title">Quick report summary</h3></div></div>
+        <p id="report-summary-text">Your dataset summary will appear here after analysis.</p>
+        <div class="summary-facts">
+          <div><b id="s-described">—</b><span>Features with descriptions</span></div>
+          <div><b id="s-ai">—</b><span>AI-generated descriptions</span></div>
+          <div><b id="s-gaps">—</b><span>Metadata items to review</span></div>
+          <div><b id="s-duplicates">—</b><span>Duplicate rows</span></div>
+          <div><b id="s-missing-values">—</b><span>Total missing values</span></div>
+        </div>
+        <small class="summary-note">This summary is calculated from the uploaded dataset and documentation results. Download the detailed reports in Excel or PDF below.</small>
+      </section>
+      <div class="panel">
+        <div class="panel-head"><div><h3>Data dictionary</h3><p>One entry for every dataset feature.</p></div><div class="download-actions"><a id="download-dict-xlsx" class="outline-btn" href="#">↓ Excel</a><a id="download-dict-pdf" class="outline-btn" href="#">↓ PDF</a></div></div>
+        <div class="table-wrap"><table><thead><tr><th>FEATURE</th><th>DATA TYPE</th><th>DESCRIPTION</th><th>DESCRIPTION SOURCE</th><th>UNIT</th><th>USER-SUPPLIED RANGE</th><th>MIN (OBSERVED)</th><th>MAX (OBSERVED)</th><th>MEAN</th><th>STD. DEV.</th><th>NON-NUMERIC</th><th>IQR OUTLIERS</th><th>NULL %</th><th>STATUS</th></tr></thead><tbody id="dictionary-body"></tbody></table></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><h3>Missing metadata</h3><p>Information that should be supplied by a domain expert or dataset owner.</p></div><div class="download-actions"><a id="download-missing-xlsx" class="outline-btn" href="#">↓ Excel</a><a id="download-missing-pdf" class="outline-btn" href="#">↓ PDF</a></div></div>
+        <div class="table-wrap"><table><thead><tr><th>FEATURE</th><th>MISSING FIELD</th><th>WHY IT IS NEEDED</th></tr></thead><tbody id="missing-body"></tbody></table></div>
+      </div>
+      <div class="panel preview-panel"><div class="panel-head"><div><h3>Dataset preview</h3><p>First eight rows from the uploaded file.</p></div></div><div class="table-wrap"><table><thead id="preview-head"></thead><tbody id="preview-body"></tbody></table></div></div>
+      <div class="bottom-actions"><button id="new-analysis" class="outline-btn">＋ Analyze another dataset</button><span>Observed statistics and IQR outlier flags are exploratory only — not approved operating limits.</span></div>
+    </section>
+    <footer>MANUDOC AI <span>·</span> HACKATHON PROJECT · PS 192 · V0.5.3</footer>
+  </main>
+</div>
+<script src="/static/app.js"></script>
+</body></html>

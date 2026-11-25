@@ -1,0 +1,6 @@
+timestamp,spindle_speed,feed_rate,machine_state,channel_01
+2026-01-01T09:00:00,1200,0.25,running,12.4
+2026-01-01T09:01:00,1210,0.25,running,12.7
+2026-01-01T09:02:00,1195,0.30,idle,12.2
+2026-01-01T09:03:00,1220,0.30,running,13.1
+2026-01-01T09:04:00,1205,0.25,running,
